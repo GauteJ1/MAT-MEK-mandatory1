@@ -161,8 +161,6 @@ class Poisson2D:
         j = int(np.floor(j_))
         j_round = i_ - i
 
-        # We use the value of the four closest points on the meshgrid,
-        # scaled for how close they are to our point
 
         return (
             (1 - i_round) * (1 - j_round) * U[i, j]
@@ -192,8 +190,3 @@ def test_interpolation():
         )
         < 1e-3
     )
-
-
-if __name__ == "__main__":
-    test_convergence_poisson2d()
-    test_interpolation()
